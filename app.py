@@ -133,54 +133,27 @@ create_table()
 # Login
 # ======================================================
 
-@app.route("/login", methods=["GET","POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login():
 
     if request.method == "POST":
 
-        username = request.form.get(
-            "username"
-        )
+        username = request.form.get("username")
+        password = request.form.get("password")
 
-        password = request.form.get(
-            "password"
-        )
-
-
-        print(
-            "Login Attempt:",
-            username
-        )
-
-
-        if username == "admin" and password == "admin123":
+        if username and password:
 
             session.clear()
-
             session["user"] = username
 
-
-            print(
-                "Session Created:",
-                session
-            )
-
-
-            return redirect(
-                url_for("dashboard")
-            )
-
+            return redirect(url_for("dashboard"))
 
         return render_template(
             "login.html",
-            error="Invalid username or password"
+            error="Please enter both username and password."
         )
 
-
-    return render_template(
-        "login.html"
-    )
-
+    return render_template("login.html")
 
 
 # ======================================================
