@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-10">
+
+        <div class="card bg-dark text-white shadow-lg">
+
+            <div class="card-body p-5">
+
+                <div class="text-center mb-4">
+
+                    <h1>
+                        🛡 AI Intrusion Detection System
+                    </h1>
+
+                    <p class="text-secondary">
+                        Machine Learning Based Network Intrusion Detection
+                    </p>
+
+                </div>
+
+                <hr>
+
+                <h3 class="text-success">
+                    Project Overview
+                </h3>
+
+                <p>
+                    This project is an AI-powered Intrusion Detection System (IDS)
+                    that detects malicious network traffic using Machine Learning.
+                    It analyzes network datasets and classifies each record as
+                    <strong>Normal</strong> or <strong>Attack</strong>.
+                </p>
+
+                <h3 class="text-info mt-4">
+                    Features
+                </h3>
+
+                <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item bg-dark text-white">
+                        ✅ Secure Admin Login
+                    </li>
+
+                    <li class="list-group-item bg-dark text-white">
+                        ✅ Upload Network Dataset (.csv / .txt)
+                    </li>
+
+                    <li class="list-group-item bg-dark text-white">
+                        ✅ AI Prediction using Random Forest
+                    </li>
+
+                    <li class="list-group-item bg-dark text-white">
+                        ✅ Detection Dashboard
+                    </li>
+
+                    <li class="list-group-item bg-dark text-white">
+                        ✅ Interactive Charts
+                    </li>
+
+                    <li class="list-group-item bg-dark text-white">
+                        ✅ Detection History
+                    </li>
+
+                    <li class="list-group-item bg-dark text-white">
+                        ✅ PDF & Excel Report Generation
+                    </li>
+
+                </ul>
+
+                <h3 class="text-warning mt-4">
+                    Technologies Used
+                </h3>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <ul>
+
+                            <li>Python</li>
+                            <li>Flask</li>
+                            <li>Scikit-learn</li>
+                            <li>Pandas</li>
+                            <li>SQLite</li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <ul>
+
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>Bootstrap 5</li>
+                            <li>Chart.js</li>
+                            <li>Jinja2</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <h3 class="text-primary mt-4">
+                    Dataset
+                </h3>
+
+                <p>
+                    NSL-KDD Dataset
+                </p>
+
+                <h3 class="text-danger mt-4">
+                    Machine Learning Model
+                </h3>
+
+                <p>
+                    Random Forest Classifier
+                </p>
+
+                <h3 class="text-success mt-4">
+                    Developed By
+                </h3>
+
+                <p>
+
+                    <strong>Ekuabou Riame</strong><br>
+
+                    Intern Project @2026<br>
+
+                    Department of Computer Applications
+
+                </p>
+
+                <div class="text-center mt-4">
+
+                    <a href="{{ url_for('dashboard') }}"
+                       class="btn btn-success">
+
+                        <i class="bi bi-speedometer2"></i>
+
+                        Dashboard
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

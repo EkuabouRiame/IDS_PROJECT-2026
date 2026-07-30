@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}
+Upload Dataset
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+        <div class="card bg-dark shadow-lg">
+
+            <div class="card-body p-5">
+
+                <h2 class="text-center mb-4">
+                    <i class="bi bi-upload"></i>
+                    Upload Network Dataset
+                </h2>
+
+                <p class="text-center text-secondary">
+                    Select a NSL-KDD dataset (.csv or .txt) for AI intrusion detection.
+                </p>
+
+                <form action="{{ url_for('predict') }}"
+                      method="POST"
+                      enctype="multipart/form-data">
+
+                    <div class="mb-4">
+
+                        <label class="form-label">
+                            Choose Dataset
+                        </label>
+
+                        <input
+                            type="file"
+                            class="form-control form-control-lg"
+                            name="file"
+                            accept=".csv,.txt"
+                            required>
+
+                    </div>
+
+                    <div class="d-grid">
+
+                        <button type="submit"
+                                class="btn btn-success btn-lg">
+
+                            <i class="bi bi-cpu"></i>
+                            Predict Intrusion
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+                <hr class="my-4">
+
+                <div class="alert alert-info">
+
+                    <h5>
+                        Supported Files
+                    </h5>
+
+                    <ul class="mb-0">
+
+                        <li>NSL-KDD (.txt)</li>
+
+                        <li>CSV Dataset (.csv)</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="text-center mt-4">
+
+                    <a href="{{ url_for('dashboard') }}"
+                       class="btn btn-primary">
+
+                        <i class="bi bi-speedometer2"></i>
+
+                        Dashboard
+
+                    </a>
+
+                    <a href="{{ url_for('history') }}"
+                       class="btn btn-warning">
+
+                        <i class="bi bi-clock-history"></i>
+
+                        History
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
