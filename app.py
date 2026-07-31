@@ -28,7 +28,9 @@ from src.excel_report import create_excel
 from src.database import (
     create_table,
     insert_detection,
-    get_all
+    get_all,
+    delete_detection,
+    delete_all
 )
 
 
@@ -564,6 +566,34 @@ def history():
         "history.html",
         records=records
     )
+# ==========================================
+# Delete One History Record
+# ==========================================
+
+@app.route("/delete/<int:record_id>")
+def delete(record_id):
+
+    if "user" not in session:
+        return redirect(url_for("login"))
+
+    delete_detection(record_id)
+
+    return redirect(url_for("history"))
+
+
+# ==========================================
+# Clear All History
+# ==========================================
+
+@app.route("/clear-history")
+def clear_history():
+
+    if "user" not in session:
+        return redirect(url_for("login"))
+
+    delete_all()
+
+    return redirect(url_for("history"))
 # ======================================================
 # PDF Download
 # ======================================================
